@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="MyApp">
     <head>
         <meta charset="utf-8">
         <title></title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
         <script src="./js/app.js" charset="utf-8"></script>
     </head>
-    <body>
-        {{2+2}}
+    <body ng-controller="travelController as ctrl">
+
+
+<form ng-submit="ctrl.createTravelInfo()">
+  <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
+  <input ng-model="ctrl.image" type="text" value="image" placeholder="image link">
+  <input type="submit" value="Submit">
+</form>
+
     </body>
 </html>
