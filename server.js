@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+const travelController = require('./controllers/travel.js');
+app.use('/travel', travelController);
+
 app.get('/', (req,res)=>{
   res.send('Hello World')
 })
