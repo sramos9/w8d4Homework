@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="MyApp">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
-        <script src="./js/app.js" charset="utf-8"></script>
-    </head>
-    <body ng-controller="travelController as ctrl">
 
-      <ul>
-        <li ng-repeat="travel in ctrl.travel">
-          {{travel.description}} </br>
-          <img src="{{travel.image}}" />
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+</head>
 
-        </li>
-      </ul>
+<body ng-controller="travelController as ctrl">
 
-{{ctrl.description}} </br>
-<img src="{{ctrl.image}}" />
-<form ng-submit="ctrl.createTravelInfo()">
-  <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
-  <input ng-model="ctrl.image" type="url" value="image" placeholder="image link">
-  <input type="submit" value="Submit">
-</form>
+  <ul>
+    <li ng-repeat="travel in ctrl.travel">
+      {{travel.description}} </br>
+      <img src="{{travel.image}}" />
 
-    </body>
+      <button ng-click="ctrl.deleteTravelInfo(travel)" type="button" name="button">Delete</button>
+
+      <form ng-submit="ctrl.editTravelInfo(travel)">
+        <input type="text" ng-model="ctrl.updatedDescription" placeholder="edit description">
+        <input type="text" ng-model="ctrl.updatedImage" placeholder="edit image">
+        <input type="submit" name="" value="Update">
+      </form>
+
+    </li>
+  </ul>
+
+  {{ctrl.description}} </br>
+  <img src="{{ctrl.image}}" />
+  <form ng-submit="ctrl.createTravelInfo()">
+    <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
+
+    <input ng-model="ctrl.image" type="url" value="image" placeholder="image link">
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+
 </html>

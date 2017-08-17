@@ -35,13 +35,13 @@ app.controller('travelController', ['$http', function($http){
       }
     );
   }
-  this.editTravelInfo = function(travelInfo){
+  this.editTravelInfo = function(travel){
     $http({
       method: 'PUT',
       url: '/travel/' + travel._id,
       data: {
-        description: travel.description,
-        image: travel.image
+        description: this.updatedDescription,
+        image: this.updatedImage
       }
     }).then(
       function(response){
@@ -52,7 +52,7 @@ app.controller('travelController', ['$http', function($http){
       }
     );
   }
-  this.deleteTravelInfo = function(travelInfo){
+  this.deleteTravelInfo = function(travel){
     $http({
       method: 'DELETE',
       url: '/travel/' + travel._id
