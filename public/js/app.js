@@ -9,7 +9,7 @@ app.controller('travelController', ['$http', function($http){
     }).then(
       function(response){
         console.log('this is the response');
-        controller.todos = response.data
+        controller.travel = response.data
       },
       function(error){
 
@@ -34,6 +34,6 @@ app.controller('travelController', ['$http', function($http){
       }
     );
   }
-  
+
   this.getTravelInfo();
 }])
