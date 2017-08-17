@@ -1,0 +1,23 @@
+{
+  "name": "w8d4homework",
+  "version": "1.0.0",
+  "description": "Mark Murphy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sramos9/w8d4Homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sramos9/w8d4Homework/issues"
+  },
+  "homepage": "https://github.com/sramos9/w8d4Homework#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
