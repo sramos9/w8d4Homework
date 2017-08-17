@@ -8,8 +8,16 @@
     </head>
     <body ng-controller="travelController as ctrl">
 
-{{ctrl.description}} </br>
+      <ul>
+        <li ng-repeat="travel in ctrl.travel">
+          {{travel.description}} </br>
+          <img src="{{travel.image}}" />
 
+        </li>
+      </ul>
+
+{{ctrl.description}} </br>
+<img src="{{ctrl.image}}" />
 <form ng-submit="ctrl.createTravelInfo()">
   <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
   <input ng-model="ctrl.image" type="url" value="image" placeholder="image link">

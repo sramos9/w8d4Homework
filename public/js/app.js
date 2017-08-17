@@ -8,8 +8,8 @@ app.controller('travelController', ['$http', function($http){
       url: '/travel'
     }).then(
       function(response){
-        console.log('this is the GET response', response);
-        controller.todos = response.data
+        console.log('this is the response');
+        controller.travel = response.data
       },
       function(error){
 
