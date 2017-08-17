@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/sramos9/w8d4Homework#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
   }
 }
