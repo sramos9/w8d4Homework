@@ -8,10 +8,11 @@
     </head>
     <body ng-controller="travelController as ctrl">
 
+{{ctrl.description}} </br>
 
 <form ng-submit="ctrl.createTravelInfo()">
   <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
-  <input ng-model="ctrl.image" type="text" value="image" placeholder="image link">
+  <input ng-model="ctrl.image" type="url" value="image" placeholder="image link">
   <input type="submit" value="Submit">
 </form>
 
