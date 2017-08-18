@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html ng-app>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
-        <script src="./js/app.js" charset="utf-8"></script>
-    </head>
-    <body>
-        {{2+2}}
-    </body>
+<html ng-app="MyApp">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body ng-controller="travelController as ctrl">
+  <div class="jumbotron">
+    <h1>R&M Travel Board</h1>
+
+    <h2>Add Your Post!</h2>
+      <form ng-submit="ctrl.createTravelInfo()">
+        <input ng-model="ctrl.description" type="text" value="description" placeholder="description of location">
+
+        <input ng-model="ctrl.image" type="url" value="image" placeholder="image link">
+        <input type="submit" value="Submit" class="btn btn-dark">
+      </form>
+  </div>
+
+
+
+
+<div class="container-fluid">
+  <h2>Travel Posts</h2>
+  <ul>
+    <li ng-repeat="travel in ctrl.travel">
+      {{travel.description}} </br>
+      <img src="{{travel.image}}" />
+
+
+
+      <form ng-submit="ctrl.editTravelInfo(travel)">
+        <input type="text" ng-model="ctrl.updatedDescription" placeholder="edit description">
+        <input type="text" ng-model="ctrl.updatedImage" placeholder="edit image">
+        <input type="submit" name="" value="Update" class="btn btn-dark">
+        <button ng-click="ctrl.deleteTravelInfo(travel)" type="button" name="button" class="btn btn-dark">Delete</button>
+      </form>
+
+    </li>
+  </ul>
+
+
+  {{ctrl.description}} </br>
+  <img src="{{ctrl.image}}" />
+</div>
+
+</body>
+
 </html>
