@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
 body {
   background-color: grey;
   color: white;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .jumbotron {
@@ -20,4 +23,8 @@ body {
 
 li {
   list-style-type: none;
+}
+
+h1 {
+font-size: 60px;
 }
